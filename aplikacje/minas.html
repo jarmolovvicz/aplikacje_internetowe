@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Middle-Earth Store</title>
+    <link rel="stylesheet" href="minas-style.css">
+	<meta charset="utf-8">
+</head>
+
+<body>
+
+	<div id="menu_bar"> 
+
+		<div id="menu1">
+			<script>
+				function updateDateTime() {
+				  var now = new Date();
+				  var date = now.toLocaleDateString();
+				  var time = now.toLocaleTimeString();
+				  var dateTimeString = date + ' ' + time;
+				  document.getElementById('menu1').innerHTML = dateTimeString;
+				}
+				setInterval(updateDateTime, 1000);
+			</script>
+		</div>
+
+		<div id="menu1"><a href="index.html"> Home </a> </div>
+		<div id="menu1"><a href="replicas.html"> Replicas </a></div>
+		<div id="menu1"><a href="books.html">Books</a></div>
+</div>
+
+<img id="isengard" src="gondor.png">
+
+	<div class="container">
+		<div class="image-miniatures" id="miniatures">
+			<img src="minas/minas_1_max.jpg">
+			<img src="minas/minas_2_max.jpg">
+			<img src="minas/minas_3_max.jpg">
+			<img src="minas/minas_4_max.jpg">
+			<img src="minas/minas_5_max.jpg">
+			<img src="minas/minas_6_max.jpg">
+		</div>
+
+		<img src="minas/minas_1_max.jpg" class="base-image" id="update">
+	</div>
+
+	<div id="container2">
+		<p id="title">MINAS TIRITH</p>
+		<p> Winner of seventeen Academy Awards, The Lord of the Rings was brought to the big screen by New Line Cinema 
+		and directed by Peter Jackson. </p>
+
+		<p>Minas Tirith has seven levels, divided by concentric walls and crowned by the Tower of Ecthelion and the Court of the Fountain, where grows the 
+		White Tree of Gondor. Bisecting the city, a great rock abutment sprouts from the mountainside like the prow of a ship.</p>
+
+		<p>When war comes to Gondor, Minas Tirith is besieged by the forces of Mordor to the East. Riding to the defense
+		 of the city from Rohan and beyond, the free peoples of Middle-earth mount their last stand against the Dark Lord's overwhelming forces at Minas Tirith.</p>
+
+		<p> Our authentic prop replicas and collectibles are designed by the very same artists who have worked on the three
+		films, so effectively they come straight from Middle-earth.</p>
+
+		<p id="text1">Please note: This miniature environment was designed and prototyped here at the Workshop. Images are of a pre-production prototype. This product is hand painted and variations will occur.</p>
+
+		
+	</div>
+
+	<br><br><br>
+
+	<div id="footer">
+
+		<br><br>
+		<h1>Are you interested in the crafts we make?
+			<br> Join our newsletter to stay up to date! <br><br></h1>
+	
+		<form action="formularz.php" method="post" enctype="multipart/form-data">
+	
+			<label for="email">E-mail:</label><br>
+			<input type="email" name="email" id="email" required><br><br>
+	
+			<label for="imie">First name:</label><br>
+			<input type="text" name="imie" id="imie" required><br><br>
+	
+			<label for="nazwisko">Last Name:</label><br>
+			<input type="text" name="nazwisko" id="nazwisko" required><br><br>
+	
+	
+			<input type="submit" value="Send">
+		</form>
+	</div>
+</body>
+
+<script>
+	const update = document.getElementById("update");
+	const miniatures = document.getElementById("miniatures");
+	const images = miniatures.getElementsByTagName("img");
+
+	for(let i = 0; i < images.length; i++){
+		images[i].addEventListener("click", () => {
+			update.classList.remove("fade");
+
+			setTimeout(() => {
+				update.classList.add("fade");
+				update.src = images[i].src;
+			}, 100);
+		})
+	}
+</script>
+</html>

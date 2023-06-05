@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Middle-Earth Store | Books</title>
+    <link rel="stylesheet" href="style_books.css">
+	<meta charset="utf-8">
+</head>
+
+<body>
+
+	<div id="menu_bar"> 
+
+			<div id="menu1">
+				<script>
+					function updateDateTime() {
+					  var now = new Date();
+					  var date = now.toLocaleDateString();
+					  var time = now.toLocaleTimeString();
+					  var dateTimeString = date + ' ' + time;
+					  document.getElementById('menu1').innerHTML = dateTimeString;
+					}
+					setInterval(updateDateTime, 1000);
+				</script>
+			</div>
+
+			<div id="menu1"><a href="index.html"> Home </a> </div>
+			<div id="menu1"><a href="replicas.html"> Replicas </a></div>
+			<div id="menu1"><a href="figures.html">Figures</a></div>
+	</div>
+
+	<img id="isengard" src="rivendell.webp">
+
+
+<div id="products">
+
+	<a href="minas"><div>  <img src="books/lotr.jpg" id="product_1"> </div></a>
+	<a href="#"><div>  <img src="books/hobbit.jpg" id="product_1"> </div></a>
+	<a href="#"><div>  <img src="books/silma.jpg" id="product_1"></div></a>
+	<a href="#"><div>  <img src="books/unfi.webp" id="product_1"> </div></a>
+</div>
+
+<div id="footer">
+
+	
+	<h1>Are you interested in the crafts we make?
+		 <br> Join our newsletter to stay up to date! <br><br></h1>
+
+	<form action="formularz.php" method="post" enctype="multipart/form-data">
+
+		<label for="email">E-mail:</label><br>
+		<input type="email" name="email" id="email" required><br><br>
+
+		<label for="imie">First name:</label><br>
+		<input type="text" name="imie" id="imie" required><br><br>
+
+		<label for="nazwisko">Last Name:</label><br>
+		<input type="text" name="nazwisko" id="nazwisko" required><br><br>
+
+
+		<input type="submit" value="Send">
+	</form>
+</div>
+
+</body>
+
+</html>
